@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"server/msg"
 
-	"github.com/name5566/leaf/gate"
-	"github.com/name5566/leaf/log"
+	"leaf/gate"
+	"leaf/log"
 )
 
 func handleMsg(m interface{}, h interface{}) {
