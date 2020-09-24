@@ -12,6 +12,6 @@ var Processor = protobuf.NewProcessor()
 //len & id 均为大端编码， 根据id区分消息类型
 
 func init() {
-	Processor.Register(&Hello{})    // id : 0 每行递增1
-	Processor.Register(&HelloRsp{}) // 1
+	Processor.Register(&UserLogin{})    // id : 0 每行递增1
+	Processor.Register(&UserLoginRsp{}) // 1
 }

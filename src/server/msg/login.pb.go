@@ -25,7 +25,7 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type Hello struct {
+type UserLogin struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -33,8 +33,8 @@ type Hello struct {
 	Name string `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 }
 
-func (x *Hello) Reset() {
-	*x = Hello{}
+func (x *UserLogin) Reset() {
+	*x = UserLogin{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_login_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -42,13 +42,13 @@ func (x *Hello) Reset() {
 	}
 }
 
-func (x *Hello) String() string {
+func (x *UserLogin) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Hello) ProtoMessage() {}
+func (*UserLogin) ProtoMessage() {}
 
-func (x *Hello) ProtoReflect() protoreflect.Message {
+func (x *UserLogin) ProtoReflect() protoreflect.Message {
 	mi := &file_login_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -60,28 +60,28 @@ func (x *Hello) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Hello.ProtoReflect.Descriptor instead.
-func (*Hello) Descriptor() ([]byte, []int) {
+// Deprecated: Use UserLogin.ProtoReflect.Descriptor instead.
+func (*UserLogin) Descriptor() ([]byte, []int) {
 	return file_login_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Hello) GetName() string {
+func (x *UserLogin) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type HelloRsp struct {
+type UserLoginRsp struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Success bool `protobuf:"varint,1,opt,name=Success,proto3" json:"Success,omitempty"`
 }
 
-func (x *HelloRsp) Reset() {
-	*x = HelloRsp{}
+func (x *UserLoginRsp) Reset() {
+	*x = UserLoginRsp{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_login_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -89,13 +89,13 @@ func (x *HelloRsp) Reset() {
 	}
 }
 
-func (x *HelloRsp) String() string {
+func (x *UserLoginRsp) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*HelloRsp) ProtoMessage() {}
+func (*UserLoginRsp) ProtoMessage() {}
 
-func (x *HelloRsp) ProtoReflect() protoreflect.Message {
+func (x *UserLoginRsp) ProtoReflect() protoreflect.Message {
 	mi := &file_login_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -107,27 +107,28 @@ func (x *HelloRsp) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HelloRsp.ProtoReflect.Descriptor instead.
-func (*HelloRsp) Descriptor() ([]byte, []int) {
+// Deprecated: Use UserLoginRsp.ProtoReflect.Descriptor instead.
+func (*UserLoginRsp) Descriptor() ([]byte, []int) {
 	return file_login_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *HelloRsp) GetName() string {
+func (x *UserLoginRsp) GetSuccess() bool {
 	if x != nil {
-		return x.Name
+		return x.Success
 	}
-	return ""
+	return false
 }
 
 var File_login_proto protoreflect.FileDescriptor
 
 var file_login_proto_rawDesc = []byte{
 	0x0a, 0x0b, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x03, 0x6d,
-	0x73, 0x67, 0x22, 0x1b, 0x0a, 0x05, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x12, 0x12, 0x0a, 0x04, 0x4e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x22,
-	0x1e, 0x0a, 0x08, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x73, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x4e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x67, 0x22, 0x1f, 0x0a, 0x09, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12,
+	0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e,
+	0x61, 0x6d, 0x65, 0x22, 0x28, 0x0a, 0x0c, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
+	0x52, 0x73, 0x70, 0x12, 0x18, 0x0a, 0x07, 0x53, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x53, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -144,8 +145,8 @@ func file_login_proto_rawDescGZIP() []byte {
 
 var file_login_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_login_proto_goTypes = []interface{}{
-	(*Hello)(nil),    // 0: msg.Hello
-	(*HelloRsp)(nil), // 1: msg.HelloRsp
+	(*UserLogin)(nil),    // 0: msg.UserLogin
+	(*UserLoginRsp)(nil), // 1: msg.UserLoginRsp
 }
 var file_login_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -162,7 +163,7 @@ func file_login_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_login_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Hello); i {
+			switch v := v.(*UserLogin); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -174,7 +175,7 @@ func file_login_proto_init() {
 			}
 		}
 		file_login_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HelloRsp); i {
+			switch v := v.(*UserLoginRsp); i {
 			case 0:
 				return &v.state
 			case 1:

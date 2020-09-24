@@ -118,6 +118,7 @@ func (a *agent) OnClose() {
 		if err != nil {
 			log.Error("chanrpc error: %v", err)
 		}
+		UserOffline(a)
 	}
 }
 

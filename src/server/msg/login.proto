@@ -1,10 +1,10 @@
 syntax = "proto3";
 package msg;
 
-message Hello{
+message UserLogin{
     string Name = 1;
 }
 
-message HelloRsp{
-    string Name = 1;
+message UserLoginRsp{
+    bool Success = 1;
 }
