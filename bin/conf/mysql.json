@@ -1,0 +1,8 @@
+{
+    "Username" : "root",
+    "Password" : "123",
+    "IpAddress" : "127.0.0.1",
+    "Port" : 3306,
+    "DbName" : "golang_test",
+    "Charset" : "utf8"
+}
